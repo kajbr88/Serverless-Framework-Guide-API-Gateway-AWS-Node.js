@@ -1,0 +1,21 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+# /* org field is used to link the service to your serverless framework organization to ensure the deployment 
+# and the mangement of this service are tied to the correct account. */
+service: greet # /* The service field give this project a name which is greet here this name helps uniquely 
+# identify the service and is also used in naming the aws resources it creates. */ 
+frameworkVersion: "4"
+
+provider: # The provider section specifies the environment in which the service will run. 
+  name: aws # name: aws means the service will be deployed on aws.
+  runtime: nodejs22.x # /* This specifies the service code will run on the nodejs20.x environment this
+  # ensures aws lambda knows the runtime to use for executing the function. */
+
+functions: # The function section defines the serverless function in this service.
+  hello: # The function is named hello.
+    handler: handler.hello # The handler property specifies where the functions logic resides in this case it is located at handler.js.
+    events: # /* The events property defines the trigger for the function.
+# "in this case it is triggered by an http get request to the root path /" 
+# this essentially sets up a lightweight http endpoint that will invoke the function whenever a get request is received. */ 
+      - httpApi:
+          path: /
+          method: get # These methods allow api gateway to control how user interact with the backend system.
