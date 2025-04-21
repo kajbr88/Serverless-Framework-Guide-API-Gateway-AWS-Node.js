@@ -1,69 +1,54 @@
-<!--
-title: 'AWS Simple HTTP Endpoint example in NodeJS'
-description: 'This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.'
-layout: Doc
-framework: v4
-platform: AWS
-language: nodeJS
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, Inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# Serverless Framework Guide: API Gateway, AWS & Node.js
 
-# Serverless Framework Node HTTP API on AWS
+This repository contains the code and resources from the Udemy course "Serverless Framework Guide: API Gateway, AWS & Node.js" by Macaulay Academy.
 
-This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.
+## Course Overview
 
-This template does not include any kind of persistence (database). For more advanced examples, check out the [serverless/examples repository](https://github.com/serverless/examples/) which includes Typescript, Mongo, DynamoDB and other examples.
+This course provides a comprehensive guide to building serverless applications using the Serverless Framework, AWS (Amazon Web Services), and Node.js. You will learn how to:
+
+* Build a multi-store application with a fully serverless backend
+* Implement microservices for better scalability and maintainability
+* Use API Gateway, AWS Lambda, DynamoDB, and S3 for a complete serverless stack
+* Work with event-driven architectures using SQS, SNS, and EventBridge
+* Automate deployments with Infrastructure as Code using Serverless Framework and AWS CloudFormation
+* Implement authentication and authorization with Cognito and IAM
+* Monitor and troubleshoot applications using CloudWatch and logging strategies
+* Optimize performance, security, and cost efficiency for cloud-based applications
+
+## Getting Started
+
+To get started with the code in this repository, make sure you have the following prerequisites:
+
+* **Node.js and npm (or yarn):** Ensure Node.js is installed on your system. npm usually comes bundled with Node.js. You can check your installation by running `node -v` and `npm -v` in your terminal.
+* **Serverless Framework CLI:** Install the Serverless Framework command-line interface globally using npm:
+    ```bash
+    npm install -g serverless
+    ```
+    Or with yarn:
+    ```bash
+    yarn global add serverless
+    ```
+* **AWS Account:** You will need an active AWS account to deploy and run the serverless applications.
+* **AWS CLI Configured:** Ensure the AWS Command Line Interface (CLI) is installed and configured with your AWS credentials. You can find instructions on how to do this in the AWS documentation.
 
 ## Usage
 
-### Deployment
+Each directory within this repository likely contains specific instructions or code related to a particular lesson or project in the course. To run the code:
 
-In order to deploy the example, you need to run the following command:
+1.  Navigate to the specific project directory in your terminal.
+2.  Install the necessary dependencies (if any) using `npm install` or `yarn install`.
+3.  Deploy the serverless application using the Serverless Framework CLI:
+    ```bash
+    sls deploy
+    ```
 
-```
-serverless deploy
-```
+## License
 
-After running deploy, you should see output similar to:
+This repository likely contains code that was developed as part of the Udemy course. The licensing for this code may be subject to the terms of the course or the platform. Please refer to any specific licensing information provided within the course materials or individual files.
 
-```
-Deploying "serverless-http-api" to stage "dev" (us-east-1)
+## Acknowledgements
 
-✔ Service deployed to stack serverless-http-api-dev (91s)
-
-endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
-functions:
-  hello: serverless-http-api-dev-hello (1.6 kB)
-```
-
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [HTTP API (API Gateway V2) event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api).
-
-### Invocation
-
-After successful deployment, you can call the created application via HTTP:
-
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
-```
-
-Which should result in response similar to:
-
-```json
-{ "message": "Go Serverless v4! Your function executed successfully!" }
-```
-
-### Local development
-
-The easiest way to develop and test your function is to use the `dev` command:
-
-```
-serverless dev
-```
-
-This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
-
-Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
-
-When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
+* **Macaulay Academy:** For creating and delivering this insightful course on the Serverless Framework.
+* **Udemy:** For providing the platform for this learning experience.
+* **The Serverless Framework Community:** For building and maintaining this powerful tool.
+* **Amazon Web Services (AWS):** For providing the cloud infrastructure for serverless computing.
